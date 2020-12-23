@@ -1,30 +1,29 @@
 <?php
 
-    // $eleve = [
-    //     'nom' => 'Doe',
-    //     'prenom' => 'Marc',
-    //     'notes' => [20, 18, 9, 15]
-    // ];
-    // $eleve['prenom'] = 'Jean';
-    // $eleve['notes'][] = 16;
-    // echo $eleve['prenom'] . ' ' . $eleve['nom'];
+    $heure = (int)readline('Entrez une heure: ');
 
-    // $eleve[] = 'CE2-1';
+    if (($heure >= 9 && $heure <= 12) || ($heure >= 14 && $heure <= 16)) {
+        echo 'Le magasin est ouvert.';
+    } else {
+        echo 'Le magasine st fermé.';
+    }
+    
 
-    // print_r($eleve);
+/*  $action = (int)readline('Entrez votre action : (1: attaquer, 2: défe,dre, 3: passer son tour)');
 
-    $classe = [
-        [
-            'nom' => 'Doe',
-            'prenom' => 'Marc',
-            'notes' => [16, 39, 20]
-        ],
-        [
-            'nom' => 'Dartois',
-            'prenom' => 'Frank',
-            'notes' => [12, 9, 14]
-        ]
-    ];
-
-    echo $classe[1]['notes'][1];
-
+    switch ($action) {
+        case 1:
+            echo 'J\'attaque !';
+            break;
+        case 2:
+            echo 'Je défends !';
+            break;
+        case 3:
+            echo 'Je ne fais rien';
+            break;
+        default:
+            echo 'Commande inconnue.';
+            break;
+    }
+ */
+   
