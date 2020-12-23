@@ -1,21 +1,30 @@
-Hi all !
 <?php
 
-    // // Les guillemets doubles interprètent les variables qu'ils entourent, contrairement aux guillemets simple qui ne font qu'afficher
-    // $nom = 'Marc';
-    // $prenom = 'Doe';
-    // echo "$nom\n$prenom";
+    // $eleve = [
+    //     'nom' => 'Doe',
+    //     'prenom' => 'Marc',
+    //     'notes' => [20, 18, 9, 15]
+    // ];
+    // $eleve['prenom'] = 'Jean';
+    // $eleve['notes'][] = 16;
+    // echo $eleve['prenom'] . ' ' . $eleve['nom'];
 
-    // Exercice
-    $prenom = 'Marc';
-    $nom = 'Doe';
-    $note1 = 10;
-    $note2 = 20;
-    $moyenne = ($note1 + $note2)/2;
-    
-    echo "Bonjour $prenom $nom, vous avez eu $moyenne de moyenne.";
+    // $eleve[] = 'CE2-1';
 
+    // print_r($eleve);
 
-?>
+    $classe = [
+        [
+            'nom' => 'Doe',
+            'prenom' => 'Marc',
+            'notes' => [16, 39, 20]
+        ],
+        [
+            'nom' => 'Dartois',
+            'prenom' => 'Frank',
+            'notes' => [12, 9, 14]
+        ]
+    ];
 
-How are you!
+    echo $classe[1]['notes'][1];
+
