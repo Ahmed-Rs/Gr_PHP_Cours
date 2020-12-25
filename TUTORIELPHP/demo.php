@@ -1,119 +1,63 @@
 <?php
 
-// $chiffre = null;
+/* $mot = readline("Veuillez entre un mot: ");
+$mot = strtolower($mot);
+$reverse = strrev($mot);
 
-/* while ($chiffre !== 10) {
-    $chiffre = (int)readline('Entrez une valeur: ');
-    // break; Nous fait sortir de la boucle même si la conditionn'est pas remplie
+if ($mot === $reverse) {
+    echo "Ce mot est un palindrome.";
+} else {
+    echo "Ce mot n'est pas un palindrome.";
 }
+ */
 
-echo 'Bravo vous avez gagné !'; */
+/* $notes = [10, 18, 19];
+$notes2 &= $notes; // Ici on passe une référence, la modification d'une variable implique la modif de la seconde variable. (Fct mutable)
+array_push($notes, 16, 17); // Cette fct modifie la variable $notes, Présence du & dans la description php.net 
+$notesReversed = array_reverse($notes); // Cette fct ne modifie pas la valeur de sa variable, d'où la nécessité de la stocker dans une variable. (Fct imutable)
+print_r($notes);
+$somme = array_sum($notes);
+$nbreElements = count($notes);
+$moyenne = round($somme / $nbreElements);
+echo "Votre moyenne est de " . $moyenne .".";
 
-// for ($i = 0; $i < 10; $i +=2) { 
-//     echo "- $i \n";
-// }
+ */
 
-// for ($i=0; $i < 3; $i++) { 
-//     echo '- ' . $notes[$i]. "\n";
-// }
-
-/*  $notes = [10, 15, 19];
-$eleves = [
-    'CM-2' => 'Jean',
-    '6e' => 'Fred'
-];
-
-foreach ($notes as $note) {
-    echo '- ' . $note . "\n";
-}
-
-foreach ($eleves as $classe => $eleve) {
-    echo "$eleve est en classe de $classe \n";
-} */
-
-/*     EXERCICE 
-$eleves = [
-    'CM2' => ['Jean', 'Francois', 'Mathilde'],
-    '5e'  => ['Brigite', 'Andrea']
-];
-
-foreach ($eleves as $classe => $listeEleves) {
-
-    echo "La classe $classe: \n";
-
-    foreach ($listeEleves as $nomEleve) {
-        echo "- $nomEleve \n";
+/* while (true) {
+    $mot = readline("Entrez votre mot : \n");
+    if ($mot === '') {
+        exit('Fin du programme'); // La fct. exit() permet d'arrêter le script.
     }
-    echo "\n";
-} */
-/* 
-$requete = null;
-$notes = [];
-
-while (true) {
-    $requete = readline('Entrez une note ou tapez fin pour finaliser: ');
-    if ($requete === 'fin') {
-        break;
+    $reverse = strtolower(strrev($mot));
+    if (strtolower($mot) == $reverse) {
+        echo "Ce mot est un palindrome \n";
     } else {
-        $notes[] = (int)$requete;
+        echo "Ce mot n'est pas un palindrome \n";
     }
 }
+ */
 
-echo "Les notes des élèves sont: \n\n";
-foreach ($notes as $note) {
-    echo "- $note \n";
-} */
+$insultes = ['con', 'merde'];
+$asterisque = [];
+foreach ($insultes as $insulte) {
 
-
-$horaires = [];
-
-while (true) {
-
-    $heureOuvert = (int)readline('Veuillez entrer une heure d\'ouverture du magasin: ');
-    $heureFerme = (int)readline('Veuillez entrer une heure de fermeture du magasin: ');
-
-    if ($heureOuvert < $heureFerme) {
-
-        $horaires[] = [$heureOuvert, $heureFerme];
-
-        $confirmation = readline('Souhaitez-vous ajouter un creneaux ? (o/n) :');
-
-        if ($confirmation == 'n' ) {
-            break;
-
-        } elseif ($confirmation == 'o') {
-            
-        }
+    $premiereLettre = substr($insulte, 0, 1);
+    $asterisque[] = $premiereLettre . str_repeat('*', strlen($insulte) - 1);
     
-    } else {
-        echo "Votre heure de fermeture n'est pas valide veuillez ressaisir les horaires. \n";
-    }
-
 }
 
-// echo "Votre magasin sera ouvert de ";
-// foreach ($horaires as $k => $horaire) {
-//     if ($k > 0) {
-//         echo " et de ";
-//     }
-//     echo " {$horaire[0]}h à {$horaire[1]}h";
-// }
+$phrase = readline("Entrez votre phrase : \n");
+$phrase = strtolower($phrase);
+$phrase = str_replace($insultes, $asterisque, $phrase);
 
-
-$cond = false;
-while ($cond == false) {
-
-    foreach ($horaires as $horaire) {
-
-        $heureClient = (int)readline('Veuillez saisir une heure à laquelle vous souhaitez effectuer vos achats: ');
-
-        if ($heureClient >= $horaire[0] && $heureClient <= $horaire[1]) {
-            echo "Notre magasin sera ouvert, vous y serez le bienvenue !";
-            $cond = true;
-
-        } else {
-            echo "Notre magasin sera fermé, veuillez choisir une autre heure. \n"; 
-
-        }
-    }
+/* foreach ($insultes as $insulte) {
+    $taille = strlen($insulte);
+    $replace = str_repeat('*', $taille);
+    $phrase = str_replace($insulte, $replace, $phrase);
 }
+*/
+
+
+
+
+echo $phrase;
