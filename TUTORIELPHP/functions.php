@@ -1,17 +1,45 @@
 <?php
-function repondre_oui_non (string $phrase): bool {   
-    while (true) {
-
-        $reponse = readline($phrase . "(o/n): ");
-        
-        if ($reponse === 'o') {
-            return true;
-
-        } elseif ($reponse === 'n') {
-            return false;
-        }
+function nav_item(string $lien, string $titre, string $linkClass = ''):string {
+    $classe = 'nav_item';
+    if ($_SERVER['SCRIPT_NAME'] === $lien) {
+        $classe .= ' active';
     }
+    return <<<HTML
+    <li class="$classe">
+        <a class="$linkClass" aria-current="page" href="$lien">$titre</a>
+    </li>
+HTML;
 }
 
-require_once 'functions_creneaux.php'; // Permet de n'inclure qu'une seule fois le fichier
+function nav_menu (string $linkClass = ''):string {
+    return nav_item('/index.php', 'Accueil', $linkClass) . 
+           nav_item('/contact.php', 'Contact', $linkClass);
+}
 
+
+function checkbox (string $name, string $value, array $data):string {
+    $attributes = '';
+    if (isset($data[$name]) && in_array($value, $data[$name])){
+        $attributes .= 'checked';
+    }
+    return <<<HTML
+        <input type="checkbox" name="{$name}[]" value="$value" $attributes>        
+
+HTML;
+}
+function radio (string $name, string $value, array $data):string {
+    $attributes = '';
+    if (isset($data[$name]) && $value === $data[$name]){
+        $attributes .= 'checked';
+    }
+    return <<<HTML
+        <input type="radio" name="$name" value="$value" $attributes>        
+
+HTML;
+}
+
+function dump ($variable) {
+    echo '<pre>';
+    var_dump($variable);
+    echo '</pre>';
+}
